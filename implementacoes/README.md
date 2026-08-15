@@ -64,11 +64,11 @@ conhecimento adicional injetado, não parte da definição do problema.
 
 | Semana | Encontro | Implementar | Experimento que gera discussão |
 |---|---|---|---|
-| 1 | 19/08 | Interface de problema + BFS, DFS, UCS, gulosa, A\* | Mesmo grafo, 5 algoritmos: onde gulosa perde otimalidade e por quanto |
+| 1 | 19/08 | Interface de problema + BFS, DFS, UCS, gulosa, A\* | Mesmo grafo, 5 algoritmos: onde gulosa perde otimalidade e por quanto — **Tarefa 1 é lançada neste encontro** |
 | 2 | 26/08 | IDS, IDA\*, heurísticas do 8-puzzle (peças fora do lugar × Manhattan) | Dominância medida em nós expandidos; b\* efetivo de cada heurística |
-| 3 | 02/09 | Subida de encosta, têmpera simulada, AG canônico | n-rainhas: taxa de sucesso × custo, subida simples vs. reinício aleatório vs. AG |
+| 3 | 02/09 | Subida de encosta, têmpera simulada, AG canônico | n-rainhas: taxa de sucesso × custo, subida simples vs. reinício aleatório vs. AG — ⚠️ **andamento da Tarefa 1 cobrado em aula** |
 | 4 | 09/09 | Busca online (LRTA\*) em labirinto desconhecido | Razão de competitividade medida contra o ótimo offline |
-| — | 16/09 | **Entrega da Tarefa de Busca** | |
+| — | 16/09 | **Entrega da Tarefa 1** | |
 | 7–8 | 30/09, 07/10 | Árvore de decisão do zero (entropia, ganho, poda) | Efeito da poda em treino × teste; overfitting visto, não citado |
 | 9–10 | 14/10, 21/10 | Perceptron; MLP com backprop manual | XOR: por que o perceptron falha e o que exatamente a camada oculta adiciona |
 | — | 04/11 | **Entrega da Tarefa de ML** | |
