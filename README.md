@@ -38,6 +38,8 @@ Hub de organização pessoal da disciplina. Prof. Gustavo A. Giménez-Lugo (DAIN
 | `implementacoes/README.md` | Plano do código próprio (busca, local/AG, ML) |
 | `tarefas/tarefa-01-busca.md` | Enunciado da Tarefa 1, checklist de nota zero, calendário e estratégia |
 | `abordagem-do-professor.md` | Perfil acadêmico do professor e o que ele espera nas entregas |
+| `tarefas/bibliografia-tsp.md` | Referências verificadas para o artigo da Tarefa 1 |
+| `materiais/professor/README.md` | Resumo da tese dele (2004), trajetória de publicações e ganchos para TCC |
 | `materiais/README.md` | Catálogo do acervo: documentos oficiais e material por bloco |
 | `materiais/01-agentes-e-ambientes/README.md` | Catálogo comentado do material do encontro 1, slide a slide |
 

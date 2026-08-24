@@ -1,0 +1,381 @@
+1
+1 Introdução
+Faz parte do senso comum a crença de que podemos usufruir das informações
+disponibilizadas na Internet e em meios similares. No entanto, quando realmente
+partimos à procura do conhecimento imerso nesse oceano de informação, perce-
+bemos que dispomos de pouco mais do que alguns mapas incompletos e técnicas
+de busca não muito eficientes.
+
+Viabilizar a cooperação entre pessoas, através da partilha de seus conhecimen-
+tos de forma a obter melhores resultados nas suas tarefas particulares, tem sido
+um dos objetivos almejados pela Ciência da Computação há décadas. A Internet
+deve o seu sucesso à aceitação desta idéia como lugar comum em nossa época.
+Ao procurar informações, de uma forma ou de outra, acabamos dependendo das
+heurísticas de quem reputamos bem-sucedido em sucessivas navegações.
+
+Tornar realidade a cooperação no sentido mais amplo do termo, no entanto,
+tem-se mostrado tarefa árdua. Comunicação apenas não basta. Agrupamentos
+de pessoas evidenciam a existência de comunidades de sentido! (CASTORIADIS,
+1991; BACZKO, 1985; GIBSON; KLEINBERG; RAGHAVAN, 1998) que não podem
+ser reduzidas a visões únicas e totalizantes: viver no “Oriente” ou no “Ocidente”
+pouco ou nada diz sobre os gostos dos grupos sociais aos quais um indivíduo
+pertence e com os quais se identifica. O esforço dispendido para tornar as técnicas
+computacionais capazes de servir à interação entre seres humanos mostra que estes
+significados devem ser apreendidos.
+
+Sistemas Multiagentes (SMA) têm sido alvo de intensas pesquisas na última
+década por fornecerem ao usuário um nível de abstração que facilita a explici-
+tação das suas requisições. Estes consideram a atribuição de intencionalidade
+a componentes de um sistema computacional denominados agentes (NEWELL,
+” 1Cada coletividade produz um sistema simbólico que permite designar sua identidade, dis-
+tinguindo papéis e posições sociais, exprimindo e impondo crenças e códigos comuns.
+
+1.1 Problema abordado 2
+1982; SEARLE, 1983; CASTELFRANCHI, 1998).
+
+Agentes computacionais podem ser auxiliares mais eficientes na medida em
+que disponham de uma representação que torne explícitas as comunidades de
+sentido, tanto em relação à sua semiótica quanto aos seus integrantes.
+
+Dado este enfoque inicial, o problema a ser tratado nesta tese é descrito a
+seguir. Sucessivamente são apresentados o objetivo, a motivação e a proposta da
+tese. Na segiiência, aparecem ainda as contribuições esperadas e a organização
+do restante do texto.
+
+1.1 Problema abordado
+
+A denominada Web (teia) é formada pelo conjunto de sítios que disponibilizam
+recursos utilizando o protocolo HyperText Transfer Protocol (HTTP). Cada sítio
+é, basicamente, um servidor HTTP. A Web utiliza como infra-estrutura a rede
+Internet. Os recursos são publicados através de páginas no formato Hyper Text
+Markup Language (HTML), interconectadas por links (ligações). Um link é um
+apontador para o endereço HTTP de um recurso alvo.
+
+A natureza dinâmica e distribuída da Web parece sobrepujar qualquer esforço
+individual de mapeá-la. Os repositórios indexam apenas uma fração instantânea
+dela. Segundo Lawrence e Gilles (1999), como citado por Kobayashi e Takeda
+(2000), dados de 1999 indicavam que as máquinas de busca mais importantes” não
+cobriam, cada uma, mais do que 16 % da Web. A figura 1.1 mostra a situação em
+dezembro de 20013. Nela, a franja superior do Google indica os links que podem
+ser indiretamente atingidos através do seu uso, mas que não estão efetivamente
+indexados, e a faixa inferior do Inktomi indica sítios nela classificados como sendo
+os “melhores da Web”.
+
+Em relação ao tamanho, apenas considerando a Web com mais de 8 mi-
+lhões de sítios únicos!, devem ser considerados dois tipos de conteúdo (LYMAN;
+” 2Foram consideradas HotBot, Altavista, Northern Light, Excite, Infoseek, Lycos, Snap,
+Microsoft, Google, Yahoo e Euroseek.
+
+3http:/ /searchenginewatch.org, acessado em maio de 2002.
+
+4No sentido de estarem associados a servidores específicos, segundo o Online Compu-
+ter Library Center (OCLC, www-oclc.org) citado em http://www-pandia.com /sw-2001/57-
+websize.html.
+
+1.1 Problema abordado 3
+Milhões de páginas indexadas
+geo TT]
+1800
+god Lo o
+mola
+Lo! [oo
+wo Lo
+e] Lo
+cod LES so
+od LL) [Ir TE |
+Sl Do o Hs E
+dd ti Tila l
+Google Fast Altavista Inktomi Northern
+Light
+Figura 1.1: Estimativa de páginas indexadas em dezembro de 2001 pelos
+maiores sítios de busca segundo a Search Engine Watch.
+VARIAN, 2000): os disponibilizados como páginas estáticas (chamada de Web su-
+perficial) e os que fazem parte de bases de dados especializadas e sítios dinâmicos
+(chamada de Web profunda). A Web superficial teria constado, no ano 2000,
+de aproxidamente 2.500 milhões de documentos” (6.000 milhões em 2001(RAVIA,
+2001)) e a Web profunda conteria 550.000 milhões de documentos”, sendo 95%
+acessíveis publicamente (LYMAN; VARIAN, 2000). Segundo Ravia (2001), a taxa
+de crescimento da Web superficial teria começado a diminuir a partir de 2001.
+
+Adicionalmente a esses dados, a visibilidade de uma página ou sítio, destina-
+da pelos seus criadores a ser pública, pode ser diretamente afetada por motivos
+comerciais (LIVINGSTON, 2000), políticos (INTRONA; NISSENBAUM, 2000) ou
+militares (LABOVITZ; AHUJA; BAILEY, 2001)”. No entanto, formas de busca
+alternativas (RAVIA, 2001) podem ajudar a trazer à luz essas porções de conhe-
+cimento que, sendo originalmente públicas, são desfocadas pelo exercício dessas
+diversas formas de preconceito.
+
+Dada a vastidão e a diversidade do conteúdo presente na Internet, o proble-
+ma enfrentado é a busca de uma forma eficiente de recuperar informações desse
+corpus, a partir da requisição de um usuário. Para tanto, não basta dispor so-
+
+Como a média de cada documento seria entre 10 e 20 kbytes, o tamanho atingiria entre
+25 a 50 terabytes, dos quais 40% apenas seriam conteúdo textual, i.e. entre 10 e 20 terabytes
+(LYMAN; VARIAN, 2000).
+
+Com tamanho médio de 14 kbytes para cada documento, sendo necessários aproximada-
+mente 7.500 terabytes, dos quais 56% seriam de conteúdo, i.e 4.200 terabytes. Dois sítios (o
+Centro de Dados de Clima dos EUA e a NASA) concentrariam 7,8% da rede profunda e os 60
+sítios maiores conteriam 10% do conteúdo total (LYMAN; VARIAN, 2000).
+
+"Em torno de 5% da Web não seria de fato sequer mapeável (LABOVITZ; AHUJA; BAILEY,
+2001).
+
+1.2 Objetivo 4
+mente de máquinas de busca convencionais. É duvidoso que um usuário exponha
+publicamente, por vontade própria, de forma irrestrita, o seu conhecimento, na
+forma de documentos, mensagens etc. Um caminho a ser explorado, então, é a
+construção de agentes computacionais capazes de partilhar informação em siste-
+mas abertos (como nas arquiteturas Peer-to-Peer (P2P)) de forma a preservar
+melhor a privacidade de certos conhecimentos e facilitar a transmissão de outros.
+Estes agentes devem ser capazes de representar tanto o conhecimento quanto
+os contatos sociais (e o seu grau de proximidade) dos usuários aos quais estão
+dedicados.
+
+1.2 Objetivo
+
+Na vida real, indivíduos pertencem a comunidades e, dentro das mesmas, são fili-
+ados a grupos. Portanto, é corriqueira a situação em que a busca de informações
+ocorra não somente na Internet, mas também no seu círculo de conhecidos. Já a
+disposição que uma pessoa manifesta em compartilhar os seus recursos de infor-
+mação (por exemplo, na forma de documentos) com outra depende não somente
+do seu conhecimento, mas também do tipo de relação interpessoal que mantém
+com o respectivo interlocutor.
+
+A figura 1.2 mostra esquematicamente alguns dos fatores que podem ser con-
+siderados para abordar o problema. Um indivíduo possui, além dos seus recursos
+de informação, uma estruturação do seu conhecimento, a sua ontologia”. Ele
+também é ciente da sua rede de contatos interpessoais, denominada Rede Social
+Pessoal. Porém, os contatos da sua Rede Pessoal não são tratados igualmente,
+dependendo do grupo e do papel” que tal contato desempenha em relação a si.
+Assim sendo, um indivíduo também leva em conta a sua visão organizacional sub-
+jetiva do seu entorno comunitário ao decidir compartilhar /buscar informações.
+
+O objetivo geral deste trabalho é o de contribuir na formação /estruturação de
+comunidades virtuais, tendo como base redes sociais de conhecimento. Concre-
+tamente, a tese pretende modelar um agente computacional capaz de auxiliar na
+
+Uma ontologia pode ser entendida como a forma em que um indivíduo organiza o que
+percebe como sendo a realidade. Em Inteligência Artificial, denota um artefato que compreende
+um vocabulário específico e um conjunto de suposições sobre o significado das palavras de tal
+vocabulário (TAMMA, 2002).
+
+9No sentido sociológico, por exemplo amigo, chefe, etc.
+
+1.2 Objetivo 5
+Organização
+Ontologia — Da
+ERRA
+“A E
+EO
+> [1
+censeetmtere, ZA
+er, SEA
+a, Rede Social Pessoal AL2 SS
+PN DB
+f Erê >
+| f o Q í
+Figura 1.2: Quando procuram informações, os seres humanos consideram as
+comunidades das quais fazem parte.
+troca de conhecimentos entre pares num ambiente comunitário, possibilitando:
+
+e Localização de pessoas que possuam os conhecimentos procurados e que
+poderiam ser descobertas (e eventualmente reputadas) através de Redes
+Sociais (cadeia de recomendações);
+
+e Acesso a conhecimentos (palavras-chaves, documentos, etc.), de posse de
+contatos sociais, que não estejam necessariamente disponíveis em páginas
+da Web.
+
+Tal agente deve ser capaz de tratar os diversos aspectos que aparecem na figu-
+ra 1.2, e que são considerados pelos seres humanos quando da procura e partilha
+de informações. Os agentes dedicados aos usuários são concebidos como compo-
+nentes de um SMA aberto, capaz de fornecer uma infra-estrutura de mediação
+computacional para comunidades.
+
+1.3 Motivação 6
+1.3 Motivação
+
+A exploração de alternativas que facilitem o acesso ao conhecimento imerso na In-
+ternet é um problema em aberto em Ciência da Computação. Oyama, Hiramatsu
+e Ishida (2001) ressaltam que as técnicas de agentes de informação cooperati-
+vos precisam ser estendidas de forma a fornecer suporte não somente a equipes
+mas também a comunidades (vide seção 3.2). A opção por SMA decorre da sua
+adequação para tratar a cooperação social decentralizada (particularmente em
+sistemas P2P), fornecendo a abstração necessária para possibilitar tanto o proje-
+to do sistema quanto o próprio raciocínio das entidades de software que interagem
+diretamente com o usuário. Considerando este fato, a motivação deste trabalho
+se encontra em:
+
+e Procurar alternativas para a partilha de conhecimento, utilizando a Internet
+como infra-estrutura para a interação peer-to-peer;
+
+e Alavancar a criação e a consolidação de comunidades de usuários mediados
+computacionalmente.
+
+1.4 Proposta
+
+O tratamento dos componentes descritos na figura 1.2 requer a elaboração de um
+agente capaz de aplicar técnicas oriundas de diversas areas da Ciência da Com-
+putação. Elas aparecem nas diversas fases que viabilizam o seu funcionamento:
+
+e Inicialmente o agente deve processar e indexar os recursos disponibilizados
+pelo usuário (e.g. documentos e mensagens de correio eletrônico), de forma
+a tornar os seus conteúdos manipuláveis computacionalmente. Para tanto,
+são aplicadas técnicas de Recuperação de Informações (RI);
+
+e Numa segunda fase, a estruturação do conhecimento do usuário, ie. a
+sua ontologia, deve ser representada através de estruturas computacionais,
+utilizando técnicas de engenharia de conhecimento;
+
+e As mensagens de correio eletrônico, uma vez processadas, fornecem uma
+base para a extração automática da rede de contatos pessoais do usuário;
+
+1.4 Proposta 7
+e À visão organizacional subjetiva do usuário, designando grupos e papéis
+sociais aos contatos da rede social pessoal, pode ser tratada computacio-
+nalmente, formalizando-a pela adoção de um modelo de organização para
+sociedades multiagentes.
+
+No cenário vislumbrado, os agentes computacionais propostos fazem parte de
+um SMA aberto, numa arquitetura P2P, onde cada agente está associado a um
+usuário humano. Esta concepção decentralizada é mostrada na figura 1.3.
+
+A figura ilustra parte de um cenário onde:
+
+e Cada agente possui uma estruturação de seu conhecimento do usuário, na
+forma de uma instância de uma ontologia particular, derivada de uma on-
+tologia inicial;
+
+e Cada agente possui uma representação organizacional subjetiva dos seus
+contatos, que formam sua rede pessoal. Propõe-se que o usuário construa,
+usando a sua rede pessoal de contatos como referência, a sua visão subjetiva
+de organização e que esta representação utilize o modelo de especificação
+organizacional!” Morse* (HUBNER, 2003);
+
+e Uma mesma ontologia geral é fornecida inicialmente para cada agente, on-
+de a cada conceito estão atreladas palavras, consideradas como atributos
+associados ao conceito;
+
+e Propõe-se que durante a dinâmica existencial do agente os conceitos da
+ontologia particular sejam anotados com informações que referenciem tanto
+o uso destes conceitos, quanto a representação organizacional subjetiva do
+usuário. Estas anotações servem para rastrear as mudanças conceituais e o
+seu uso organizacional, facilitando a localização de especialistas mesmo no
+decurso de mudanças.
+
+Em tal cenário, ao receber uma requisição de outro agente em relação a um
+conceito, um agente verificaria quais são os recursos e contatos relacionados a este
+conceito. Esta informação está armazenada nas anotações. A seguir, disponibili-
+zaria as informações, levando em conta o seu grau de privacidade em relação ao
+
+19Tma especificação organizacional é a explicitação formal de uma organização natural ou
+artificial.
+
+1.4 Proposta 8
+AGENTE =
+; Y
+St
+1", -s
+7
+(+ ? , re
+il ]
+A PA”
+Vga A
+a x
+Ri 1
+á
+a
+ES
+Y E
+ES
+AGENTE
+. ANOTAÇÕES rs
+Ontologia ORGANIZACIONAIS
+A Rede 1
+1 Pessoal !
+' 1
+s 4
+N 75? =
+ES
+> 4 1
+ma);
+' “
+“o
+Figura 1.3: Um agente computacional capaz de interagir com outros agentes
+numa comunidade, relacionando a sua ontologia e a sua representação
+organizacional com a sua rede social de contatos.
+
+1.5 Contribuições esperadas 9
+papel que o agente solicitante desempenha na visão organizacional subjetiva do
+usuário. Um SMA com tais características pode ser utilizado para auxiliar uma
+comunidade de usuários na manipulação e gestão dos seus conhecimentos numa
+forma mais próxima à maneira pela qual os seres humanos realizam esta tarefa.
+1.5 Contribuições esperadas
+
+Como parte das contribuições desta tese, o modelo a ser elaborado deve responder
+a diversas perguntas que permitam projetar um SMA colaborativo, dedicado à
+recuperação de informações na Internet usando redes sociais:
+
+e Como construir uma representação da rede social da(s) comunidade(s) à(s)
+qual(is) pertence um usuário de forma a se aproximar da visão do usuário?
+
+e Como podem ser relacionadas a estruturação do conhecimento e a rede
+social de um usuário?
+
+e Como utilizar a estruturação do conhecimento e a rede social do usuário
+para localizar pessoas que possuam conhecimentos num certo domínio?
+
+e Como pode o usuário ter maior controle sobre diferentes recursos (docu-
+mentos, contatos, ontologias, etc.), preservando a sua privacidade sem invi-
+abilizar a partilha de informação P2P?
+
+e Quais são as inovações deste método?
+
+Uma hipótese deste trabalho é que a utilização da ferramenta experimental a
+ser elaborada será maior ao minimizar a necessidade de intervenção do usuário nas
+etapas anteriores ao uso efetivo. Assim, outra pergunta decorre das anteriores:
+
+e Como construir a ontologia de um usuário com o mínimo de intervenção da
+sua parte?
+
+De forma geral, a inclusão destas capacidades em agentes de informação pode
+
+ajudar na concepção de agentes que ampliem a noção de mediadores entre os
+usuários e as fontes de informação (WIEDERHOLD, 1992).
+
+1.6 Organização do texto 10
+1.6 Organização do texto
+
+O texto está distribuído em duas partes. Na primeira, composta de dois capítulos,
+são apresentados os conceitos que guiam a discussão do objeto da tese. Na se-
+gunda parte, são detalhadas a proposta e o encaminhamento teórico-metodológico
+adotado.
+
+A primeira parte inclui os capítulos 2 e 3. No capítulo 2, são abordadas al-
+gumas das técnicas clássicas empregadas no acesso à informação. Já no capítulo
+3, são comentados alguns tópicos relacionados à exploração dos caminhos aber-
+tos com o advento da Internet e a sua associação com o paradigma de agentes
+computacionais e comunidades de usuários. Os agentes computacionais tratados
+no texto são concebidos de forma a incluir entre as suas habilidades as técnicas
+mostradas tanto no capítulo 2 quanto no capítulo 3.
+
+A segunda parte inclui os capítulos 4 e 5. No capítulo 4, é apresentado o
+modelo da proposta, detalhando seus aspectos principais, que são embasados nos
+conceitos expostos na primeira parte. A seguir, no capítulo 5 são explicitadas
+as particularidades de uma implementação onde agentes computacionais foram
+dotados com algumas das propriedades advocadas pela proposta, de forma a
+demonstrar as possibilidades abertas. Ao final deste capítulo são apresentados os
+resultados experimentais, bem como uma análise dos mesmos.
+
+Finalmente, o capítulo 6 apresenta as principais contribuições do trabalho, fa-
+ce aos resultados esperados descritos no capítulo 1, bem como alguns possíveis tra-
+balhos futuros decorrentes da pesquisa realizada. Adicionalmente, são incluídos
+em anexos dados suplementares que dizem respeito ao experimento efetuado:
+gráficos correlacionando ações e conceitos a segiências de busca, sociogramas
+conceituais e um questionário respondido por um dos usuários do sistema imple-
+mentado.
+
+Parte I
+Conceitos Envolvidos
+

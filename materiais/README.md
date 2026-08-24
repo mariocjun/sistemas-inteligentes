@@ -7,6 +7,7 @@ nomes de arquivo do professor, para casar com o que aparece no Moodle.
 |---|---|---|
 | `planejamento/` | Documentos oficiais da disciplina | tabela abaixo |
 | `01-agentes-e-ambientes/` | Bloco 1 — material do encontro de 19/08 | `01-agentes-e-ambientes/README.md` |
+| `professor/` | A tese de doutorado do professor (2004) + OCR e resumo | `professor/README.md` |
 
 ## `planejamento/` — documentos oficiais
 

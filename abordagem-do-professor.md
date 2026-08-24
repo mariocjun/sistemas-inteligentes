@@ -27,6 +27,9 @@ subjetivamente**.
 simulação de redes complexas, emergência e geração de objetivos em agentes, robótica cognitiva,
 ontologias, apoio à decisão, teoria dos jogos, negociação automatizada, coordenação e cooperação.
 
+> A tese completa está em `materiais/professor/` — PDF, OCR dos capítulos 1 e 6, e um resumo
+> com a lista de trabalhos futuros que ele deixou em aberto (útil para TCC).
+
 **Comunidade:** publica com Cesar A. Tacla (colega de DAINF e autor dos slides de agentes do
 bloco 1) e Mariela Morveli-Espinoza, entre outros. A UTFPR sediou o **WESAAC** (Workshop-Escola
 de Sistemas de Agentes, seus Ambientes e Aplicações).
