@@ -36,15 +36,21 @@ Hub de organização pessoal da disciplina. Prof. Gustavo A. Giménez-Lugo (DAIN
 | `encontros/encontro-01.md` | Plano de leitura até 19/08 + perguntas para o debate |
 | `encontros/_template.md` | Modelo para preparar cada encontro |
 | `implementacoes/README.md` | Plano do código próprio (busca, local/AG, ML) |
+| `tarefas/tarefa-01-busca.md` | Enunciado da Tarefa 1, checklist de nota zero, calendário e estratégia |
+| `abordagem-do-professor.md` | Perfil acadêmico do professor e o que ele espera nas entregas |
 | `materiais/README.md` | Catálogo do acervo: documentos oficiais e material por bloco |
 | `materiais/01-agentes-e-ambientes/README.md` | Catálogo comentado do material do encontro 1, slide a slide |
 
 ## Pendências imediatas
 
 - [ ] Inscrever-se no Moodle (`id=33522`, código `149`) e conferir se há material além do zip
-- [ ] Localizar a **Tarefa inicial** (já disponível no Moodle) e ler o enunciado hoje
-- [ ] Definir a **dupla** — trabalhos em equipe são exclusivamente em duplas
+- [x] Enunciado da **Tarefa 1** lido — registrado em `tarefas/tarefa-01-busca.md`
+- [x] Definir a **dupla** — feito; disponibilidade limitada, ver estratégia em `tarefas/tarefa-01-busca.md`
 - [ ] Entrar/criar o grupo de estudantes da disciplina (sem professores)
-- [ ] Ler **Cap. 2, Cap. 3 e §4.5** (4ª ed.) antes de 19/08 — plano dia a dia em
-      `encontros/encontro-01.md`
-- [ ] Ir ao encontro 1 preparado para **receber o enunciado da Tarefa 1**, que é lançada lá
+- [ ] **Terminar Cap. 2 e fazer o Cap. 3** até 25/08 (aula 2 é dia 26/08 — busca informada e A\*)
+- [ ] **Cap. 4 §4.1** (têmpera simulada e algoritmos evolutivos) até 30/08 — a Tarefa 1 depende dele
+- [ ] Cap. 1 parado: ler sem caderno numa noite tranquila; rende no ensaio sobre Turing em novembro
+- [ ] **Tarefa 1 em andamento** — TSP com Têmpera Simulada e AG, entrega 16/09 14h00; andamento
+      cobrado em aula em 02/09
+- [ ] Baixar o **modelo SBC** de artigo (submissão abre 25/08)
+- [ ] Manter o **log de horas** e o **log de uso de LLM** desde já — ambos são exigidos na entrega

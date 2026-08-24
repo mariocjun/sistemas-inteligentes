@@ -11,9 +11,9 @@ A leitura prévia vence na **terça à noite**, não na quarta de manhã.
 
 | # | Data | Conteúdo previsto | Ler ANTES (4ª ed.) | Tarefas / avaliação |
 |---|---|---|---|---|
-| 1 | qua 19/08 | Apresentação. Agentes e Ambientes. Busca Cega × Informada × Online | **Cap. 2** (todo) + **Cap. 3** (todo) + **§4.5** (busca online) | 🚀 **TAREFA 1 lançada** |
+| 1 | qua 19/08 | Apresentação. Agentes e Ambientes. Busca Cega × Informada × Online | **Cap. 2** (todo) + **Cap. 3** (todo) + **§4.5** (busca online) | 🚀 **TAREFA 1 lançada** — TSP com Têmpera Simulada e AG, artigo SBC. Detalhes em `tarefas/tarefa-01-busca.md` |
 | 2 | qua 26/08 | Busca informada. Heurísticas (e.g. A\*) | Cap. 3, com foco em **§3.5–3.6** | — |
-| 3 | qua 02/09 | Busca local. AG canônico. Representação de Conhecimento | **Cap. 4** — Busca em Ambientes Complexos (§4.1 local e algoritmos evolutivos) | 📍 **ANDAMENTO da Tarefa 1** cobrado em aula |
+| 3 | qua 02/09 | Busca local. AG canônico. Representação de Conhecimento | **Cap. 4** — Busca em Ambientes Complexos (§4.1 local e algoritmos evolutivos) — ⚠️ **é o conteúdo da Tarefa 1, leia antes** | 📍 **ANDAMENTO da Tarefa 1** cobrado em aula |
 | 4 | qua 09/09 | Representação de Conhecimento / Planejamento [cont] | **Cap. 10** (Repr. de Conhecimento) + **Cap. 11** (Planejamento). *Pré-req: Lógica* — relembrar **Caps. 8 e 9** | — |
 | 5 | qua 16/09 | Discussão conceitual sobre abordagens e conteúdo da prova | revisão integrada Caps. 2–4, 10–11 | ✅ **ENTREGA Tarefa 1 [1,0]** |
 | 6 | qua 23/09 | — | revisão | 📝 **PROVA 1 — questões abertas [2,0]** (Agentes e Ambientes, Busca, Repr. de Conhecimento) |

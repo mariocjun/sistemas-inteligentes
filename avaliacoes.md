@@ -2,7 +2,7 @@
 
 | Avaliação | Peso | Componente | Pontos | Data | Conteúdo |
 |---|---|---|---|---|---|
-| **Avaliação 1** | 3 | AV1_A — Entrega da **Tarefa de BUSCA** | 1,0 | qua **16/09** | implementação + análise |
+| **Avaliação 1** | 3 | AV1_A — **Tarefa 1**: artigo SBC sobre o **TSP** com Têmpera Simulada e AG | 1,0 | qua **16/09**, 14h00 | ver `tarefas/tarefa-01-busca.md` |
 | | | AV1_B — **Prova Teórica 1**, questões abertas | 2,0 | qua **23/09** | Agentes, Ambientes, Busca, AG, Repr. de Conhecimento |
 | **Avaliação 2** | 4 | AV2_A — Entrega da **Tarefa de APRENDIZADO DE MÁQUINA** | 1,5 | qua **04/11** | implementação + análise |
 | | | AV2_B — **Prova Teórica 2**, questões abertas | 2,5 | qua **11/11** | Aprendizado de Máquina |
