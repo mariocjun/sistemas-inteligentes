@@ -285,3 +285,17 @@ original.
 
 Para digitalizações antigas, o caminho confiável é usar o `reOCR-EN` (pesquisável) e traduzir
 trecho a trecho conforme a leitura, em vez de tentar produzir um PDF traduzido inteiro.
+
+### As três obras grandes (referência, não leitura obrigatória)
+
+Ficaram de fora do lote inicial por tamanho (831 páginas somadas) — traduzidas depois, em lote
+próprio, sem falha:
+
+| Arquivo | Bloco | Páginas | Nota |
+|---|---|---|---|
+| `Teoria_de_Agencia_SMA/MAS_BOOK_JoseVidal_PT-dual.pdf` | `01-agentes-e-ambientes/traduzidos/` | 155 | texto limpo (LaTeX), sem OCR necessário |
+| `00_2014_RandomForest_UNDERSTANDING_PhDThesis_PT-dual.pdf` | `04-aprendizagem-simbolica/traduzidos/` | 223 | tese do Louppe |
+| `00_1974_THESIS_PaulWerbos_PT-dual.pdf` | `05-redes-neurais/traduzidos/` | 453 | tese do Werbos — a mais antiga (1974), com OCR pré-existente de qualidade razoável |
+
+São referência, não leitura corrida — use a busca por palavra-chave dentro do PDF em vez de ler
+do início ao fim.
