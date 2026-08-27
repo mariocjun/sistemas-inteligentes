@@ -99,6 +99,14 @@ necessário e suficiente para ação inteligente geral; e a inteligência opera 
 heurística**. É literalmente a tese que sustenta os capítulos 3 e 4 do R&N — e o alvo das
 críticas de Brooks que ele mostrou no bloco 1.
 
+> **Leitura em português:** o PDF original é uma digitalização de 1976 cuja camada de OCR resiste
+> ao pipeline automático de tradução (`pdf2zh`) — ver `../../ferramentas/traducao-de-artigos.md`.
+> Em vez de uma tradução automática ruim, `traduzidos/1975_NewellSimon_TuringAward_PT-completo.md`
+> traz a **tradução integral feita à mão**, artigo inteiro, com todos os exemplos e citações
+> (inclusive o diálogo do *Mênon* de Platão e o problema do tabuleiro de damas mutilado). É essa a
+> leitura recomendada. O PDF com tradução parcial automática e o resumo conceitual anterior foram
+> mantidos na mesma pasta só por registro histórico da tentativa.
+
 **Gigerenzer (1991)** — ataque frontal ao programa "heurísticas e vieses" de Kahneman e Tversky.
 Argumenta que a maioria dos supostos "erros" de raciocínio probabilístico **não viola a teoria da
 probabilidade**: os pesquisadores adotaram uma visão normativa estreita demais e ignoraram

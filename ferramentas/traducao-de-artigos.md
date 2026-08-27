@@ -294,13 +294,14 @@ Em `../materiais/02-busca/traduzidos/`:
 | `1991_Gigerenzer_BeyondBiases_PT-dual.pdf` | ✅ bom |
 | `2011_Gigerenzer_HeuristicDecisionMaking_PT-dual.pdf` | ✅ bom |
 | `2019_Pantsar_CognitiveComputationalComplexity_PT-dual.pdf` | ✅ bom |
-| `1975_NewellSimon_TuringAward_PT-dual-PARCIAL.pdf` | ⚠️ **parcial** — ver abaixo |
-| `1975_NewellSimon_TuringAward_reOCR-EN.pdf` | o original re-OCRizado, em inglês, agora pesquisável |
+| `1975_NewellSimon_TuringAward_PT-completo.md` | ✅ **tradução integral, feita à mão** — ver abaixo |
+| `1975_NewellSimon_TuringAward_PT-dual-PARCIAL.pdf` | mantido por registro histórico da tentativa automática (ver abaixo) |
+| `1975_NewellSimon_TuringAward_reOCR-EN.pdf` | o original re-OCRizado, em inglês, agora pesquisável — usado como base de leitura para a tradução manual |
 
 ### O caso do Newell & Simon (1976)
 
-Esse artigo é uma **digitalização** de uma revista de 1976, e derrotou o pipeline. O histórico do
-que foi tentado, porque é instrutivo:
+Esse artigo é uma **digitalização** de uma revista de 1976, e derrotou o pipeline automático. O
+histórico do que foi tentado, porque é instrutivo:
 
 | Tentativa | Resultado |
 |---|---|
@@ -308,14 +309,20 @@ que foi tentado, porque é instrutivo:
 | `--auto-enable-ocr-workaround` no original | traduz e **aparece na página**, mas o OCR original é péssimo: *"Computer science is an empirical discipline"* virou *"()u~ view é apenas um de Jmu~y"* |
 | `ocrmypdf --force-ocr` e depois traduzir | o texto extraído fica em português, mas **a página continua mostrando inglês** — o `--force-ocr` rasteriza a página em imagem, e a tradução vai só para a camada de texto invisível |
 | `ocrmypdf --force-ocr` + `--skip-scanned-detection` + `--ocr-workaround` | idem: `--skip-scanned-detection` desliga justamente a etapa que cobriria a imagem |
-| `ocrmypdf --redo-ocr` + `--auto-enable-ocr-workaround` | **melhor resultado**, mas ainda parcial: alguns blocos aparecem em português e outros permanecem em inglês |
+| `ocrmypdf --redo-ocr` + `--auto-enable-ocr-workaround` | **melhor resultado automático**, mas ainda parcial: alguns blocos aparecem em português e outros permanecem em inglês |
+| reexportar com `pdftocairo` (a correção que resolveu os 4 slides quebrados, ver seção acima) | **não se aplica** — esse truque conserta um CMap de fonte mal declarado; aqui o problema é a própria camada de texto (OCR de 1976 malfeita), que o `pdftocairo` preserva sem melhorar |
 
 **Lição:** verificar a tradução de um PDF escaneado **rasterizando a página e olhando**, nunca só
 extraindo o texto — a camada de texto pode estar traduzida enquanto a imagem visível continua no
 original.
 
-Para digitalizações antigas, o caminho confiável é usar o `reOCR-EN` (pesquisável) e traduzir
-trecho a trecho conforme a leitura, em vez de tentar produzir um PDF traduzido inteiro.
+**Solução final:** para essa categoria de falha — texto-base ruim demais para qualquer motor de
+tradução automática lidar bem — o caminho que funciona é ler o `reOCR-EN` (pesquisável, qualidade
+boa o bastante para leitura humana) e traduzir à mão, artigo inteiro, preservando exemplos e
+citações. Foi o que se fez em `1975_NewellSimon_TuringAward_PT-completo.md`: tradução integral,
+não resumo, cobrindo as duas partes do argumento (Sistemas de Símbolos Físicos e Busca Heurística)
+e todos os exemplos (Mênon de Platão, equação algébrica, tabuleiro de damas mutilado). É a leitura
+recomendada para esse artigo — os PDFs parciais/re-OCR ficam só como registro do processo.
 
 ### As três obras grandes (referência, não leitura obrigatória)
 
