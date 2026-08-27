@@ -92,5 +92,8 @@ O professor deu o mapeamento oficial nos slides; a coluna da 4ª ed. é a sua.
 | 8 | Fundamentos de Computação Natural | Redes Neurais. Sistemas Fuzzy | 8–11 |
 | 9 | Aplicações | Aplicações práticas de IA | 14–16 |
 
-> A ementa cita **inferência em Prolog** e **Sistemas Fuzzy**, que não aparecem nem no
-> planejamento semanal nem nos slides do professor. Segue como pergunta para o encontro 1.
+> **Prolog: confirmado.** O bloco 3 do Moodle traz dois conjuntos de exercícios, oito programas
+> `.pl` e dois planejadores completos (STRIPS e POP) sobre o mundo do robô entregador. Instalar o
+> SWI-Prolog antes do encontro 4 (09/09).
+>
+> **Sistemas Fuzzy** continua sem material correspondente em nenhum bloco — segue como pergunta.

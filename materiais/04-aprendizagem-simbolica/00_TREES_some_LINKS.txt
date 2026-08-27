@@ -1,0 +1,68 @@
+﻿
+
+=========================================================
+STATQUEST - BIAS(VIÉS) e  VARIÂNCIA
+=========================================================
+https://www.youtube.com/watch?v=EuBBz3bI-aA
+
+=========================================================
+[A- ANIMATION DECISION TREES]
+ DECISION TREES - ÁRVORE DE DECISÃO ANIMADA
+=========================================================
+VERSAO EM PORTUGUES
+Uma Introducao Visual ao Aprendizado de Maquina 
+
+ http://www.r2d3.us/uma-introducao-visual-ao-aprendizado-de-maquina-1/
+
+==> www.bigml.com
+
+
+=========================================================
+TYPES OF HEURISTICS  used in Decision Trees
+=========================================================
+  
+https://www.javatpoint.com/machine-learning-random-forest-algorithm
+
+=========================================================
+RANDOM FORESTS
+=========================================================
+*) What are
+ https://www.javatpoint.com/machine-learning-random-forest-algorithm
+
+*)HOW IT WORKS - EXPLANATION TIPS
+
+ -) DECISION TREES (with CLASSES) - COMPACT
+   https://www.mygreatlearning.com/blog/decision-tree-algorithm/
+
+
+VIDEO
+-----------------
+*)STATQUEST - RANDOM FOREST (1) - 09m50
+    BUILDING+USING+EVALUATING
+https://www.youtube.com/watch?v=J4Wdy0Wc_xQ
+
+
+
+HYPERPARAMETERS
+---------------
+1-COST FUNCTION: method used to identify the best split 
+           in each tree — gini impurity, feature importance, etc. 
+
+2-MAX DEPTH: how far from the root node can each tree grow. 
+
+3-MINIMUM SAMPLES FOR A SPLIT:  number of records that must be 
+           in each node to proceed with another split
+
+4-NUMBER OF ESTIMATORS: how many trees are in the forest. 
+
+5-MAX FEATURES: how many features are available at each split 
+           (common default is the square root of the 
+            total number of features)
+
+
+Additional video
+-----------------
+*)STATQUEST - RANDOM FOREST (2) - 11m23
+   Missing data and clustering
+https://www.youtube.com/watch?v=nyxTdL_4Q-Q
+

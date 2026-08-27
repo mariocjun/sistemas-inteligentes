@@ -1,0 +1,80 @@
+
+
+EXECUÇÃO NO SWI PROLOG DE:
+======================================================
+       01_STRIPS_running_delRobot.pl
+    ----------------------------------------
+
+Descrição: planejamento usando STRIPS
+          para execução de tarefas
+          de um robô.  O MUNDO DO ROBÔ 
+          ESTÁ ILUSTRADO EM "DeliveryRobot.PDF"
+
+
+achieve(Gs,S0,S1,U0,U1) 
+------------------------
+Gs = OBJETIVO
+S0 = ESTADO INICIAL
+S1 = ESTADO FINAL
+U0 = NÚMERO DE AÇÕES MÁXIMO PARA ATINGIR OBJETIVO
+U1 = limite atingido pelo planejamento (No. 
+       de ações obtido pelo planejador)
+
+
+AÇÕES:
+------
+  *)pickup(Ag,Obj,PosicaoDeObj)
+  *)move(Ag,PosInicial,PosFinal)
+
+#####################################################
+EXEMPLO 1: query
+=====================================================
+achieve(carrying(rob,k1),init,S,10,_).
+
+SAÍDA (interpretar como plano lendo a saída de trás para a frente):
+-------------------------------------------------------------------
+S = do(pickup(rob, k1, mail), do(move(rob, o103, mail), do(move(rob, o109, o103), init)))
+S = do(pickup(rob, k1, mail), do(move(rob, o103, mail), do(move(rob, o109, o103), 
+    do(move(rob, o103, o109), do(move(rob, o109, o103), init))))) 
+S = do(pickup(rob, k1, mail), do(move(rob, o103, mail), do(move(rob, o109, o103), 
+    do(move(rob, o103, o109), do(move(rob, o109, o103), do(move(rob, o103, o109), 
+    do(move(rob, o109, o103), init)))))))
+
+...
+
+=====================================================
+EXEMPLO 2: query 
+=====================================================
+achieve(at(k1,lab2),init,S,7,N).
+
+SAÍDA - (o plano é correto? ;-))
+-------------------------------------------------------------------
+S = do(putdown(rob, k1, lab2), do(move(rob, o103, lab2), do(unlock(rob, door1), 
+    do(move(rob, mail, o103), do(pickup(rob, k1, mail), do(move(rob, o103, mail), 
+    do(move(rob, o109, o103), init)))))))
+
+
+=====================================================
+EXEMPLO 3: query
+=====================================================
+achieve_all([carrying(rob,parcel),sitting_at(rob,lab2)],init,S,10,N).
+
+SAÍDA (APENAS A PRIMEIRA) - (o plano é correto? ;-))
+-------------------------------------------------------------------
+S = do(move(rob, o103, lab2), do(unlock(rob, door1), do(move(rob, mail, o103), 
+    do(pickup(rob, k1, mail), do(move(rob, o103, mail), do(move(rob, o109, o103), 
+    do(move(rob, lng, o109), do(pickup(rob, parcel, lng), do(move(..., ..., ...), 
+    init)))))))))
+
+
+=====================================================
+EXEMPLO 4: query
+=====================================================
+achieve_all([sitting_at(rob,lab2),carrying(rob,parcel)],init,S,10,N).
+
+SAÍDA - (o plano é correto? ;-))
+-------------------------------------------------------------------
+S = do(pickup(rob, parcel, lng), do(move(rob, o109, lng), do(move(rob, lab2, o109), 
+    do(move(rob, o103, lab2), do(unlock(rob, door1), do(move(rob, mail, o103), 
+    do(pickup(rob, k1, mail), do(move(rob, o103, mail), do(move(..., ..., ...), 
+    init)))))))))

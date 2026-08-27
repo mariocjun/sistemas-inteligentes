@@ -1,0 +1,18 @@
+% Este exemplo modifica o anterior pela inversa da ordem
+% das duas ultimas clausulas.
+%
+% est = estrada - ligacao de um salto entre duas cidades
+% cam = caminho - ligacao de um ou mais saltos entre cidades
+
+% ctba - campo largo - ponta grossa
+est(ctba, campolargo).
+est(campolargo, pontagrossa).
+
+% ctba - sao jose - tijucas do sul - guaratuba - garuva
+est(ctba, saojose).
+est(saojose, tijucasdosul).
+est(tijucasdosul, guaratuba).
+est(guaratuba, garuva).
+
+cam(X, Y) :- cam(X, Z), est(Z, Y).  % os dois subobjetivos foram invertidos
+cam(X, X).

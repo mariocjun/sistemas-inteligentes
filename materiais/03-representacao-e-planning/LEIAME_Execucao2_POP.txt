@@ -1,0 +1,103 @@
+
+
+EXECUÇÃO NO SWI PROLOG DE:
+======================================================
+       02_POP_running_delRobot.pl
+    ----------------------------------------
+
+Descrição: planejamento usando STRIPS
+          para execução de tarefas
+          de um robô.  O MUNDO DO ROBÔ 
+          ESTÁ DESCRITO EM "DeliveryRobot.PDF"
+
+solve_goal(Goal,CPl,NPl,CAg,NAg,DB,DB1,DIC0,DIC1) 
+--------------------------------------------------
+Goal = objetivo
+CPl  = PLANO ATUAL (Current Plan)
+NPl  = PLANO NOVO (New Plan)
+CAg  = Agenda Atual (AGENDA=LISTA DE OBJETIVOS)
+NAg  = Nova Agenda 
+DB   = Profundidade limitada atual (Número máximo de ações)
+       i.e., restrição no número de ações 
+DB1  = Novo limite de profundidade na busca
+DIC0 = Limite para as restrições de desigualdade existentes 
+      ("delayed inequality constraints")
+DIC1 = Novo limite para as restrições de desigualdade existentes ("delayed")
+
+
+
+
+RELAÇÕES
+---------
+  *)cl(A0,P,A1) 
+    LINK CAUSAL: A0 é uma ação que torna verdadeira P,
+                sendo que P é uma pré-condição para 
+                a ação A1.
+               Ou seja, "AO torna verdadeira uma pré-
+                    condição para A1"
+  *) add_constraint1(A0<A1,Os,AOs,Os1) 
+          adiciona ORDEM como RESTRIÇÃO entre A0 e A1
+          Ou seja, "A0" deve estar antes de "A1".
+          -"Os" representa a ORDEM PARCIAL com as ORDENS
+             PARCIAIS que ainda devem ser checadas.
+          -"AOs" é a lista de TODAS AS ORDENS
+          -"Os1" É O CONJUNTO FINAL DE ORDENS
+
+#####################################################
+EXEMPLO 1: query
+=====================================================
+solve([carrying(rob,k1)],P,3).
+
+         "implica tentar solução com 3 passos"
+
+SAÍDA:   por exemplo[start 1 2 3 finish]
+-------------------------------------------------------------------
+P = plan([act(1, move(rob, o109, o103)), 
+          act(2, move(rob, o103, mail)), 
+          act(3, pickup(rob, k1, mail)), 
+          act(finish, end), 
+          act(start, init)], 
+         [start<finish, 
+          3<finish, 
+          start<3, 
+          2<finish, 
+          2<3, 
+          start<2, 
+          1<finish, 
+          ... <...|...], 
+         [cl(start, sitting_at(rob, o109), 1), 
+          cl(1, sitting_at(rob, o103), 2), 
+          cl(2, sitting_at(rob, mail), 3), 
+          cl(start, sitting_at(k1, mail), 3), 
+          cl(3, carrying(rob, k1), 
+          finish)]) 
+
+#####################################################
+EXEMPLO 2: query
+=====================================================
+solve([sitting_at(k1,lab2)],P,7).
+
+         "implica tentar solução com 7 passos"
+
+SAÍDA:        por exemplo [start 1 2 5 3 4 6 7 finish] :-)
+-------------------------------------------------------------------
+P = plan([act(1, move(rob, o109, o103)), 
+          act(2, move(rob, o103, mail)), 
+          act(3, move(rob, mail, o103)), 
+          act(4, unlock(rob, door1)), 
+          act(5, pickup(rob, k1, mail)), 
+          act(6, move(rob, o103, lab2)), 
+          act(7, putdown(..., ..., ...)), 
+          act(..., ...)|...], 
+         [start<finish, 7<finish, start<7,    
+          6<finish, 6<7, start<6, 
+          5<finish, ... <...|...], 
+         [cl(start, sitting_at(rob, o109), 1), 
+          cl(1, sitting_at(rob, o103), 2), 
+          cl(2, sitting_at(rob, mail), 3), 
+          cl(3, sitting_at(rob, o103), 4), 
+          cl(5, carrying(rob, k1), 4), 
+          cl(2, sitting_at(rob, mail), 5), 
+          cl(start, sitting_at(..., ...), 5), 
+          cl(..., ..., ...)|...]) 
+

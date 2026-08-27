@@ -6,7 +6,11 @@ nomes de arquivo do professor, para casar com o que aparece no Moodle.
 | Pasta | Conteúdo | Detalhamento |
 |---|---|---|
 | `planejamento/` | Documentos oficiais da disciplina | tabela abaixo |
-| `01-agentes-e-ambientes/` | Bloco 1 — material do encontro de 19/08 | `01-agentes-e-ambientes/README.md` |
+| `01-agentes-e-ambientes/` | Bloco 1 — agentes e ambientes (encontro 1) | `01-agentes-e-ambientes/README.md` |
+| `02-busca/` | Bloco 2 — busca, com 5 decks e 5 artigos sobre heurística (encontros 2–3) | `02-busca/README.md` |
+| `03-representacao-e-planning/` | Bloco 3 — representação e planejamento, **com código Prolog** (encontros 3–4) | `03-representacao-e-planning/README.md` |
+| `04-aprendizagem-simbolica/` | Bloco 4 — aprendizado simbólico e árvores (encontros 7–8) | `04-aprendizagem-simbolica/README.md` |
+| `05-redes-neurais/` | Bloco 5 — redes neurais (encontros 8–11), guardado para depois | `05-redes-neurais/README.md` |
 | `professor/` | A tese de doutorado do professor (2004) + OCR e resumo | `professor/README.md` |
 
 ## `planejamento/` — documentos oficiais

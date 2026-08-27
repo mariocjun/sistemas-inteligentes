@@ -42,10 +42,11 @@ Hub de organização pessoal da disciplina. Prof. Gustavo A. Giménez-Lugo (DAIN
 | `materiais/professor/README.md` | Resumo da tese dele (2004), trajetória de publicações e ganchos para TCC |
 | `materiais/README.md` | Catálogo do acervo: documentos oficiais e material por bloco |
 | `materiais/01-agentes-e-ambientes/README.md` | Catálogo comentado do material do encontro 1, slide a slide |
+| `conceitos/busca-local-e-heuristicas.md` | Têmpera, feixe, admissibilidade × consistência — com exercícios de papel |
 
 ## Pendências imediatas
 
-- [ ] Inscrever-se no Moodle (`id=33522`, código `149`) e conferir se há material além do zip
+- [x] Moodle sincronizado — **blocos 2, 3, 4 e 5 catalogados** em `materiais/`
 - [x] Enunciado da **Tarefa 1** lido — registrado em `tarefas/tarefa-01-busca.md`
 - [x] Definir a **dupla** — feito; disponibilidade limitada, ver estratégia em `tarefas/tarefa-01-busca.md`
 - [ ] Entrar/criar o grupo de estudantes da disciplina (sem professores)
