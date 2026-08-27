@@ -83,6 +83,37 @@ Tente nesta ordem, sempre com `--pages 1-5`:
 --skip-clean                     # pula a limpeza do PDF
 ```
 
+Essas três flags resolvem a maioria dos casos. Mas existe uma categoria de falha que **nenhuma
+delas resolve**: slides exportados de PowerPoint/Impress/Keynote onde o texto simplesmente não é
+traduzido — a página "termina" sem erro, mas o lado direito do dual fica idêntico ao original em
+inglês (às vezes com fragmentos cortados/sobrepostos). Isso já apareceu em 4 artigos desta
+disciplina (`00_DeliveryRobot`, `02_Planning_COG_SCI`, `04_B_TREES_RandomForests`,
+`00_Overview_ML_and_Frameworks_Etc`).
+
+**Causa raiz (investigada a fundo, não é suposição):** esses PDFs embutem a fonte do texto usando
+um CMap que o pdfminer/BabelDOC interpreta como **escrita vertical** (comum em fontes CJK), mesmo
+o texto sendo visualmente horizontal — um artefato de como o exportador gerou o PDF. O BabelDOC
+tem uma regra proposital: parágrafo marcado como vertical **não é traduzido**, é só copiado como
+está. Isso foi confirmado direto no código-fonte do `babeldoc` (instalado em `venv-next`):
+`il_translator.py`, função `pre_translate_paragraph`, tem `if paragraph.vertical: return None,
+None`; e `styles_and_formulas.py` também usa `char.vertical` como critério para tratar o trecho
+como "fórmula" (não-traduzível).
+
+**Correção que funciona, sem mexer no pdf2zh:** reexportar o PDF de origem com `pdftocairo`
+antes de traduzir. Isso reconstrói o PDF pela pipeline do Poppler/Cairo e reembute as fontes de
+forma padrão, eliminando o CMap vertical espúrio — sem perder o texto (ao contrário de rasterizar
+com OCR, que também foi tentado e não funcionou: o texto some da mesma forma).
+
+```bash
+pdftocairo -pdf artigo_quebrado.pdf artigo_reexportado.pdf
+pdf2zh_next.exe artigo_reexportado.pdf --lang-in en --lang-out pt \
+  --watermark-output-mode no_watermark --output saida
+```
+
+Se `pdftocairo` não resolver, o próximo passo é inspecionar
+`~/.cache/babeldoc/working/<nome_do_arquivo>/il_translated.json` — cada parágrafo tem um campo
+`"vertical"`; se estiver `true` em conteúdo que deveria ser texto normal, é o mesmo bug.
+
 Gera em `saida\`:
 
 | Arquivo | O que é |
