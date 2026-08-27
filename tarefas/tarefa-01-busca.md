@@ -110,6 +110,62 @@ AG ela restringe quais operadores de recombinação são sequer válidos.
 
 Desenvolver esse argumento é o trabalho avaliado. Não terceirize.
 
+## Linguagem de implementação: Python
+
+O professor liberou a linguagem. Isso transforma a escolha numa **decisão de modelagem que
+precisa ser justificada** — a seção de METODOLOGIA pede justificativa de *implementação*, e
+escolher sem justificar é perder exatamente o ponto que a disciplina avalia.
+
+**Veredito: Python é boa escolha para esta tarefa**, com três ressalvas que valem virar parágrafo
+no artigo.
+
+### A favor
+
+- A legibilidade faz o pseudocódigo do artigo sair quase de graça do código
+- `random.Random(seed)` dá controle explícito de semente — e os experimentos exigem múltiplas
+  execuções com sementes distintas
+- Permutações são listas nativas; 2-opt e PMX saem em poucas linhas legíveis
+- `matplotlib` resolve as curvas de convergência
+
+### Contra, e como mitigar
+
+**1. Velocidade.** Python puro é uma a duas ordens de grandeza mais lento que C, e têmpera e AG
+fazem muitas avaliações da função objetivo. Se as execuções forem lentas, você roda menos
+sementes e a seção de resultados fica fraca.
+
+> **Mitigação decisiva: avaliação incremental (delta).** Num movimento 2-opt que inverte o
+> segmento entre i e j, o comprimento do percurso muda por **exatamente 4 arestas** — duas saem,
+> duas entram. Custo O(1) em vez de O(n) por avaliação.
+>
+> E isso não é só otimização: **é argumento de modelagem para o artigo.** A representação por
+> permutação com vizinhança 2-opt *admite* avaliação incremental; outra escolha de vizinhança
+> talvez não admitisse. É um caso concreto de "onde e como a modelagem se reflete no algoritmo",
+> que é literalmente o item central do enunciado.
+>
+> No AG com PMX o filho é um indivíduo novo, então a avaliação é O(n) e não tem jeito — mas com
+> instâncias pequenas isso não pesa. **Essa assimetria entre os dois algoritmos também é
+> material de análise.**
+
+**2. A armadilha do ecossistema.** Python tem DEAP, pymoo, scikit-opt, mlrose. Usar qualquer um
+deles viola o contrato da disciplina, que é explícita em não ser voltada a frameworks. A
+tentação é maior em Python do que seria em C — é o principal risco da escolha.
+
+**3. numpy.** Para TSP com permutações **você não precisa de numpy**: listas nativas bastam e
+ficam mais legíveis. Isso resolve sozinha a pergunta pendente sobre o que conta como framework.
+`matplotlib` é biblioteca de plotagem, não de algoritmo — basta declarar no método.
+
+### Quando Python seria má escolha
+
+Se a tarefa exigisse instâncias grandes (n ≥ 1000) com milhões de avaliações sob orçamento de
+tempo apertado. Não é o caso: com instâncias pequenas da TSPLIB (`berlin52`, `eil51`, `st70`) e
+avaliação incremental, tudo roda em segundos.
+
+### Para o artigo
+
+Um parágrafo na metodologia no formato: *escolhemos Python por X, sabendo que o custo é Y,
+mitigado por Z*. Isso é o critério "por quê, dado que um certo como foi escolhido", aplicado à
+própria escolha de linguagem.
+
 ## Perguntas em aberto para o professor
 
 - [ ] O AG é chamado de "técnica de busca local" no enunciado. Em que sentido, se ele mantém

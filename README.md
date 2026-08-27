@@ -43,6 +43,8 @@ Hub de organização pessoal da disciplina. Prof. Gustavo A. Giménez-Lugo (DAIN
 | `materiais/README.md` | Catálogo do acervo: documentos oficiais e material por bloco |
 | `materiais/01-agentes-e-ambientes/README.md` | Catálogo comentado do material do encontro 1, slide a slide |
 | `conceitos/busca-local-e-heuristicas.md` | Têmpera, feixe, admissibilidade × consistência — com exercícios de papel |
+| `ferramentas/traducao-de-artigos.md` | Pipeline testado para traduzir os PDFs EN→PT preservando layout |
+| `ferramentas/prolog.md` | Instalar o SWI-Prolog para o bloco 3 |
 
 ## Pendências imediatas
 
