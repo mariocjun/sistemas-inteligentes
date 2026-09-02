@@ -1,14 +1,15 @@
 # Projeto: recuperar a máquina de estados de telas de um jogo compilado
 
-Projeto de hobby, com potencial de virar TCC. Nasceu de um caso real: fazer
-Mortal Kombat: Armageddon (PS2) bootar direto no minigame de kart —
-documentado em `caso-motor-kombat.md`.
+> **Origem deste texto — ler antes de usar.** Este rascunho foi gerado por
+> um LLM (Claude, sessão de 2026-09-01/02) a partir de uma revisão de
+> literatura em três frentes e de um experimento-piloto real (o caso Motor
+> Kombat, em `caso-motor-kombat.md`). Segundo a `../../politica-uso-llm.md`,
+> **nada daqui pode ir para uma entrega como está**: serve para eu reler,
+> verificar cada referência na fonte primária, e reescrever com minhas
+> palavras. O que foi pedido e o que foi feito com a saída está em
+> `registro-uso-llm.md`. A revisão **não foi exaustiva** (ver §10).
 
-> Rascunho escrito numa sessão com Claude (2026-09-01/02), a partir de
-> revisão de literatura e do experimento-piloto. **As referências da §7 não
-> foram abertas na fonte** — conferir antes de citar. O que foi pesquisado
-> está em `registro-uso-llm.md`. Se virar entrega da disciplina, reler a
-> `../../politica-uso-llm.md` antes.
+Possível TCC em Sistemas Inteligentes. Escrito em 2026-09-02.
 
 ## 1. O achado que abre a introdução
 
