@@ -1,26 +1,51 @@
-# Registro de uso de LLM — projeto grafo-estados-jogos
+# O que foi pesquisado, e o que ficou por verificar
 
-Log exigido pela `../../politica-uso-llm.md`: uma linha por uso, para que a
-seção de Método de qualquer entrega futura seja escrita a partir de
-registro, não de memória. Ferramenta em todas as linhas: **Claude Code
-(Anthropic), modelos Sonnet 5 / Opus 5 / Fable 5.1 conforme a sessão**,
-acesso via terminal, sessão de 2026-09-01 a 2026-09-02.
+Histórico da sessão com Claude Code em 2026-09-01/02 (modelos Sonnet 5,
+Opus 5 e Fable 5.1, conforme a etapa). Serve para dois propósitos:
+rastrear de onde veio cada coisa do `README.md`, e guardar o dado do
+experimento-piloto — inclusive os erros, que são a métrica de baseline.
 
-| data | o que foi pedido | o que foi feito com a saída | limitação observada |
-|---|---|---|---|
-| 2026-09-01 | Engenharia reversa assistida do binário SLUS-21410 (Ghidra headless, comparação de savestates, patches no ELF) para fazer o jogo bootar direto no Motor Kombat | Os patches foram aplicados e **testados por mim no emulador** em cada rodada; o resultado final (ISO bootando direto na pista) é verificado empiricamente, não tomado da saída do LLM | O LLM **errou 3 hipóteses** antes de acertar (handler `0x18e100` era attract mode, não seleção; slot `0x5A0B08` era do sistema de luta, não do kart; leu o argumento de `jal` na instrução anterior em vez do delay slot). Todas as três foram descobertas por teste, não pela ferramenta. Isso é dado do experimento-piloto (baseline manual), registrado em `caso-motor-kombat.md` |
-| 2026-09-02 | Revisão de literatura em 3 frentes (automata learning / PRE; decompilação de jogos e arquitetura de PS2; padrões de game dev) para saber se o problema já tinha nome | A saída (nomes, referências, vocabulário) foi usada para **redigir o rascunho** em `README.md`. **Nenhuma referência foi ainda verificada na fonte primária por mim** — ver coluna ao lado | Busca via web e fontes abertas apenas; **não cobriu ACM DL, DBLP, Google Scholar nem literatura em português**. O próprio LLM apontou isso. Cada DOI/arXiv precisa ser aberto e conferido antes de citar; a política prevê exatamente o risco de referência inexistente |
-| 2026-09-02 | Redação de um rascunho de plano de formalização (hipótese, desenho experimental, referências, ligação com a disciplina) | Guardado como `README.md` deste diretório, **rotulado como gerado por LLM no topo**. Destino previsto: reler, verificar, e **reescrever com minhas palavras** antes de qualquer entrega. Nada dele vai para entrega como está | É texto de LLM — pela política, colar como fundamentação seria nota zero. A ligação com Newell & Simon e Gigerenzer foi proposta pelo LLM a partir dos meus resumos no repo; preciso julgar se sustenta |
-| 2026-09-02 | Pesquisa sobre rodar o jogo isolado no navegador (Play!.js, EmulatorJS, Parsec) e redução da ISO | Informou decisão de distribuição (Parsec) e a truncagem da ISO, que **testei e funcionou** | Fora do escopo acadêmico; registrado por completude |
+## Engenharia reversa do caso (2026-09-01)
 
-## O que é meu e o que não é, neste diretório
+Ghidra headless, comparação de savestates e patches no ELF do SLUS-21410.
+**Cada patch foi testado no emulador**; o resultado final (ISO bootando
+direto na pista) é verificado empiricamente.
 
-- `caso-motor-kombat.md`: registro factual do experimento-piloto — endereços,
-  patches, resultados de teste. Os **fatos** foram verificados por mim no
-  emulador; a **redação** é do LLM.
-- `README.md`: rascunho inteiramente redigido pelo LLM. Não é texto meu.
-- `registro-uso-llm.md`: este arquivo, redigido pelo LLM a pedido meu, a
-  partir do que aconteceu na sessão.
+**Três hipóteses erradas antes de acertar** — isso é dado, não anedota:
 
-Antes de qualquer entrega: reescrever, e preencher o template de declaração
-da política na seção de Método.
+| Erro | O que era de fato | Como foi descoberto |
+|---|---|---|
+| handler `0x18e100` | attract mode (a luta demo), não a seleção do kart | patch aplicado → jogo caiu em loop de demo |
+| slot `0x5A0B08` | mecanismo do sistema de arenas de luta; o kart não usa | 7 savestates dentro do kart, valor nunca mudou |
+| argumento do `jal` lido na instrução anterior | em MIPS o argumento vai no **delay slot**, a instrução seguinte | mapa de estados saiu inteiro errado |
+
+O acerto veio quando parei de deduzir e comparei dois savestates: o único
+endereço que mudava entre "menu" e "seleção do kart" era `0x64de88`, o slot
+do handler ativo. Total: 5 patches, ~1 dia, 3 erros.
+
+Isso é o **grupo de controle** do experimento descrito no `README.md` §5 —
+o custo do método feito à mão, contra o qual medir a versão automatizada.
+
+## Revisão de literatura (2026-09-02)
+
+Três frentes em paralelo: (a) automata learning e protocol reverse
+engineering; (b) projetos de decompilação de jogos e arquitetura de PS2;
+(c) padrões de game dev e romhacks que isolam modos.
+
+**O que rendeu:** a técnica já tem nome em segurança de redes — *grey-box
+state variable identification* (STATEINSPECTOR, USENIX Security 2022) — e
+nunca foi aplicada a jogos. E a hipótese forte ("todo jogo de PS2") caiu:
+não há arquitetura de PS2 induzida pelo SDK, e jogos da mesma geração usam
+mecanismos diferentes. As duas coisas mudaram o `README.md`.
+
+**Limitação para lembrar:** a busca foi por web e fontes abertas (arXiv,
+GitHub, sites de projeto). **Não cobriu ACM DL, DBLP, Google Scholar de
+forma sistemática, nem literatura em português.** Nenhuma das referências
+da §7 foi aberta na fonte — conferir antes de citar em qualquer lugar.
+
+## Distribuição (2026-09-02)
+
+Pesquisa sobre rodar o jogo no navegador (Play!.js, EmulatorJS) e
+alternativas. Resultado: PS2 no navegador é experimental e tem teto de 2 GB;
+Parsec com guest gamepad é o caminho maduro. A ISO reduzida (2,63 GB, sem
+os vídeos) foi gerada e **testada, funciona**.
