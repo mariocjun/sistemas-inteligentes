@@ -543,7 +543,7 @@ master_html = f"""<!DOCTYPE html>
     </div>
 
     <!-- PRIOc e PRIOp LADO A LADO -->
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2mm; margin-bottom: 1.5mm;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2mm; margin-bottom: 1.2mm;">
         <!-- PRIOc -->
         <div class="card">
             <div class="card-header">
@@ -557,9 +557,9 @@ master_html = f"""<!DOCTYPE html>
                     <div class="gantt-row"><div class="task-lbl">t3</div><div class="gantt-track"><div class="box box-wait" style="left:calc(100%*1/14); width:calc(100%*9/14);">Espera [1 a 10]</div><div class="box box-t3" style="left:calc(100%*10/14); width:calc(100%*4/14);">CPU</div></div></div>
                     <div class="gantt-row"><div class="task-lbl">t2</div><div class="gantt-track"><div class="box box-t2" style="left:0; width:calc(100%*2/14);">CPU [0-2]</div></div></div>
                     <div class="gantt-row"><div class="task-lbl">t1</div><div class="gantt-track"><div class="box box-wait" style="left:0; width:calc(100%*2/14);">Esp</div><div class="box box-t1" style="left:calc(100%*2/14); width:calc(100%*5/14);">CPU [2 a 7]</div></div></div>
-                    <div class="gantt-axis"><div class="axis-tick">0</div><div class="axis-tick">2</div><div class="axis-tick">7</div><div class="axis-tick">9</div><div class="axis-tick">10</div><div class="axis-tick-end">14</div></div>
+                    <div class="gantt-axis"><div class="axis-tick">0</div><div class="axis-tick">1</div><div class="axis-tick">2</div><div class="axis-tick">3</div><div class="axis-tick">4</div><div class="axis-tick">5</div><div class="axis-tick">6</div><div class="axis-tick">7</div><div class="axis-tick">8</div><div class="axis-tick">9</div><div class="axis-tick">10</div><div class="axis-tick">11</div><div class="axis-tick">12</div><div class="axis-tick">13</div><div class="axis-tick-end">14</div></div>
                 </div>
-                <div style="font-size: 5.6pt; color: #475569; margin-top: 0.8mm;">
+                <div style="font-size: 5.4pt; color: #475569; margin-top: 0.6mm;">
                     Ordem: t2(p=3) &rarr; t1(p=2) &rarr; t5(p=5) &rarr; t4(p=4) &rarr; t3(p=1). Como é cooperativo, ninguém interrompe t1 em 3 ou 5.
                 </div>
             </div>
@@ -575,12 +575,12 @@ master_html = f"""<!DOCTYPE html>
                 <div class="gantt-chart">
                     <div class="gantt-row"><div class="task-lbl">t5</div><div class="gantt-track"><div class="box box-t5" style="left:calc(100%*5/14); width:calc(100%*2/14);">CPU [5-7]</div></div></div>
                     <div class="gantt-row"><div class="task-lbl">t4</div><div class="gantt-track"><div class="box box-t4" style="left:calc(100%*3/14); width:calc(100%*1/14);">CPU [3-4]</div></div></div>
-                    <div class="gantt-row"><div class="task-lbl">t3</div><div class="gantt-track"><div class="box box-wait" style="left:calc(100%*1/14); width:calc(100%*9/14);">Espera [1 a 10]</div><div class="box box-t3" style="left:calc(100%*10/14); width:calc(100%*4/14);">CPU</div></div></div>
+                    <div class="gantt-row"><div class="task-lbl">t3</div><div class="gantt-track"><div class="box box-wait" style="left:calc(100%*1/14); width:calc(100%*9/14);">Espera [1 a 10]</div><div class="box box-t3" style="left:calc(100%*10/14); width:calc(100%*4/14);">CPU [10-14]</div></div></div>
                     <div class="gantt-row"><div class="task-lbl">t2</div><div class="gantt-track"><div class="box box-t2" style="left:0; width:calc(100%*2/14);">CPU [0-2]</div></div></div>
                     <div class="gantt-row"><div class="task-lbl">t1</div><div class="gantt-track"><div class="box box-wait" style="left:0; width:calc(100%*2/14);">Esp</div><div class="box box-t1" style="left:calc(100%*2/14); width:calc(100%*1/14);">1s</div><div class="box box-wait" style="left:calc(100%*3/14); width:calc(100%*1/14);">P</div><div class="box box-t1" style="left:calc(100%*4/14); width:calc(100%*1/14);">1s</div><div class="box box-wait" style="left:calc(100%*5/14); width:calc(100%*2/14);">P</div><div class="box box-t1" style="left:calc(100%*7/14); width:calc(100%*3/14);">3s [7-10]</div></div></div>
-                    <div class="gantt-axis"><div class="axis-tick">0</div><div class="axis-tick">2</div><div class="axis-tick">3</div><div class="axis-tick">5</div><div class="axis-tick">7</div><div class="axis-tick">10</div><div class="axis-tick-end">14</div></div>
+                    <div class="gantt-axis"><div class="axis-tick">0</div><div class="axis-tick">1</div><div class="axis-tick">2</div><div class="axis-tick">3</div><div class="axis-tick">4</div><div class="axis-tick">5</div><div class="axis-tick">6</div><div class="axis-tick">7</div><div class="axis-tick">8</div><div class="axis-tick">9</div><div class="axis-tick">10</div><div class="axis-tick">11</div><div class="axis-tick-end">14</div></div>
                 </div>
-                <div style="font-size: 5.6pt; color: #475569; margin-top: 0.8mm;">
+                <div style="font-size: 5.4pt; color: #475569; margin-top: 0.6mm;">
                     <strong>Duas preempções em t1:</strong> Cortada em t=3 por t4(p=4) e em t=5 por t5(p=5). Barra de t1 fatiada em: [2-3], [4-5] e [7-10].
                 </div>
             </div>
@@ -588,37 +588,37 @@ master_html = f"""<!DOCTYPE html>
     </div>
 
     <!-- 7. PRIOd (AGING) -->
-    <div class="card" style="margin-bottom: 1.5mm;">
+    <div class="card" style="margin-bottom: 1.2mm;">
         <div class="card-header">
-            <span>7. Escalonamento PRIOd (Prioridade Dinâmica / Aging com &alpha; = 1) — Slide 23</span>
+            <span>7. Escalonamento PRIOd (Prioridade Dinâmica / Aging com &alpha; = 1) — Fiel ao Slide 23</span>
             <span class="metrics-pill">Tt = 5,8 s | Tw = 3,0 s | 6 Trocas</span>
         </div>
         <div class="card-body">
             <div class="gantt-chart">
                 <div class="gantt-row"><div class="task-lbl">t5</div><div class="gantt-track"><div class="box box-t5" style="left:calc(100%*5/14); width:calc(100%*2/14);">5 (CPU [5-7])</div></div></div>
                 <div class="gantt-row"><div class="task-lbl">t4</div><div class="gantt-track"><div class="box box-t4" style="left:calc(100%*3/14); width:calc(100%*1/14);">4 (CPU [3-4])</div></div></div>
-                <div class="gantt-row"><div class="task-lbl">t3</div><div class="gantt-track"><div class="box box-wait" style="left:calc(100%*1/14); width:calc(100%*1/14);">2</div><div class="box box-wait" style="left:calc(100%*2/14); width:calc(100%*1/14);">3</div><div class="box box-wait" style="left:calc(100%*3/14); width:calc(100%*1/14);">4</div><div class="box box-t3" style="left:calc(100%*4/14); width:calc(100%*1/14);">1</div><div class="box box-wait" style="left:calc(100%*5/14); width:calc(100%*1/14);">2</div><div class="box box-wait" style="left:calc(100%*6/14); width:calc(100%*1/14);">3</div><div class="box box-wait" style="left:calc(100%*7/14); width:calc(100%*4/14);">... sobe ...</div><div class="box box-t3" style="left:calc(100%*11/14); width:calc(100%*3/14);">1 (CPU [11 a 14])</div></div></div>
+                <div class="gantt-row"><div class="task-lbl">t3</div><div class="gantt-track"><div class="box box-wait" style="left:calc(100%*1/14); width:calc(100%*1/14);">2</div><div class="box box-wait" style="left:calc(100%*2/14); width:calc(100%*1/14);">3</div><div class="box box-wait" style="left:calc(100%*3/14); width:calc(100%*1/14);">4</div><div class="box box-t3" style="left:calc(100%*4/14); width:calc(100%*1/14);">1</div><div class="box box-wait" style="left:calc(100%*5/14); width:calc(100%*1/14);">2</div><div class="box box-wait" style="left:calc(100%*6/14); width:calc(100%*1/14);">3</div><div class="box box-wait" style="left:calc(100%*7/14); width:calc(100%*1/14);">4</div><div class="box box-wait" style="left:calc(100%*8/14); width:calc(100%*1/14);">5</div><div class="box box-wait" style="left:calc(100%*9/14); width:calc(100%*1/14);">6</div><div class="box box-wait" style="left:calc(100%*10/14); width:calc(100%*1/14);">7</div><div class="box box-t3" style="left:calc(100%*11/14); width:calc(100%*3/14);">1 (CPU [11 a 14])</div></div></div>
                 <div class="gantt-row"><div class="task-lbl">t2</div><div class="gantt-track"><div class="box box-t2" style="left:0; width:calc(100%*1/14);">3</div><div class="box box-t2" style="left:calc(100%*1/14); width:calc(100%*1/14);">3</div></div></div>
-                <div class="gantt-row"><div class="task-lbl">t1</div><div class="gantt-track"><div class="box box-wait" style="left:0; width:calc(100%*1/14);">3</div><div class="box box-wait" style="left:calc(100%*1/14); width:calc(100%*1/14);">4</div><div class="box box-t1" style="left:calc(100%*2/14); width:calc(100%*1/14);">2</div><div class="box box-wait" style="left:calc(100%*3/14); width:calc(100%*1/14);">3</div><div class="box box-wait" style="left:calc(100%*4/14); width:calc(100%*1/14);">4</div><div class="box box-wait" style="left:calc(100%*5/14); width:calc(100%*1/14);">5</div><div class="box box-wait" style="left:calc(100%*6/14); width:calc(100%*1/14);">6</div><div class="box box-t1" style="left:calc(100%*7/14); width:calc(100%*4/14);">2 (CPU [7 a 11])</div></div></div>
-                <div class="gantt-axis"><div class="axis-tick">0</div><div class="axis-tick">1</div><div class="axis-tick">2</div><div class="axis-tick">3</div><div class="axis-tick">4</div><div class="axis-tick">5</div><div class="axis-tick">6</div><div class="axis-tick">7</div><div class="axis-tick">8</div><div class="axis-tick">9</div><div class="axis-tick">10</div><div class="axis-tick">11</div><div class="axis-tick">12</div><div class="axis-tick">13</div><div class="axis-tick-end">14</div></div>
+                <div class="gantt-row"><div class="task-lbl">t1</div><div class="gantt-track"><div class="box box-wait" style="left:0; width:calc(100%*1/14);">3</div><div class="box box-wait" style="left:calc(100%*1/14); width:calc(100%*1/14);">4</div><div class="box box-t1" style="left:calc(100%*2/14); width:calc(100%*1/14);">2</div><div class="box box-wait" style="left:calc(100%*3/14); width:calc(100%*1/14);">3</div><div class="box box-wait" style="left:calc(100%*4/14); width:calc(100%*1/14);">4</div><div class="box box-wait" style="left:calc(100%*5/14); width:calc(100%*2/14);">5</div><div class="box box-t1" style="left:calc(100%*7/14); width:calc(100%*4/14);">2 (CPU [7 a 11])</div></div></div>
+                <div class="gantt-axis"><div class="axis-tick">0</div><div class="axis-tick">1</div><div class="axis-tick">2</div><div class="axis-tick">3</div><div class="axis-tick">4</div><div class="axis-tick">5</div><div class="axis-tick">6</div><div class="axis-tick">7</div><div class="axis-tick">8</div><div class="axis-tick">9</div><div class="axis-tick">10</div><div class="axis-tick-end">14</div></div>
             </div>
-            <div class="didactic-box">
+            <div class="didactic-box" style="margin-top: 0.8mm; padding: 1mm 1.5mm;">
                 <strong>O Segredo dos Números no Desenho (Slide 23):</strong> Anote a prioridade dinâmica (pd) em cada segundo!
-                <br>• Se espera na fila: <strong>pd &larr; pd + 1</strong>. Se executa na CPU: reseta para estática <strong>pd &larr; pe</strong>.
-                <br>• Em t = 4, t3 esperou 3 s e subiu para 4 (igual a t1); desempata e ganha a CPU, evitando starvation!
+                <br>• Se espera na fila: <strong>pd &larr; pd + 1</strong>. Se executa na CPU: reseta para a prioridade estática original <strong>pd &larr; pe</strong>.
+                <br>• Em t = 4, t3 esperou 3s e sua prioridade subiu para 4 (igual a t1); desempata e ganha a CPU, evitando inanição (starvation)!
             </div>
         </div>
     </div>
 
     <!-- COMPARATIVO E CASO DE PROVA LADO A LADO -->
-    <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 2mm;">
+    <div style="display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 2mm;">
         <!-- TABELA COMPARATIVA -->
         <div class="card">
             <div class="card-header"><span>📊 Quadro Comparativo Oficial (Slide 26)</span></div>
-            <div class="card-body" style="padding: 1mm 1.5mm;">
-                <table style="width: 100%; border-collapse: collapse; font-size: 5.8pt; text-align: center;">
+            <div class="card-body" style="padding: 0.8mm 1.2mm;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 5.6pt; text-align: center;">
                     <tr style="background:#1e293b; color:#fff; font-weight:bold;">
-                        <td style="padding:0.6mm; border:0.5px solid #475569;">Algoritmo</td>
+                        <td style="padding:0.5mm; border:0.5px solid #475569;">Algoritmo</td>
                         <td style="border:0.5px solid #475569;">Tt médio</td>
                         <td style="border:0.5px solid #475569;">Tw médio</td>
                         <td style="border:0.5px solid #475569;">Trocas</td>
@@ -634,20 +634,40 @@ master_html = f"""<!DOCTYPE html>
             </div>
         </div>
 
-        <!-- CASO DE PROVA: INVERSÃO DE PRIORIDADE -->
+        <!-- CASO DE PROVA: INVERSÃO DE PRIORIDADE COM GRÁFICO E RESPOSTAS -->
         <div class="card">
-            <div class="card-header"><span>🚨 Questão de Prova: Inversão</span></div>
-            <div class="card-body" style="padding: 1mm 1.5mm; font-size: 5.6pt;">
-                <strong>Caso PMC (Memória Compartilhada):</strong>
-                <br>• t1 (p=2) pega PMC em <strong>t=2</strong>.
-                <br>• t2 (p=3) chega em 3 e preempta t1.
-                <br>• t3 (p=5) chega em 5, preempta t2, pede PMC em 6 e <strong>bloqueia</strong>!
-                <br>• <strong>Inversão:</strong> t2 roda em [6, 10] e acaba em <strong>10</strong>.
-                <br>• t1 retoma, libera PMC em <strong>11</strong>.
-                <br>• t3 pega PMC em <strong>11</strong> e libera em <strong>13</strong>.
+            <div class="card-header">
+                <span>🚨 Questão de Prova: Inversão de Prioridade & PMC</span>
+                <span style="font-size:5pt; background:#fef2f2; color:#b91c1c; padding:0.2mm 1mm; border-radius:0.4mm; font-weight:bold;">25 Pontos Moodle</span>
+            </div>
+            <div class="card-body" style="padding: 0.8mm 1.5mm;">
+                <!-- GANTT DA QUESTÃO -->
+                <div class="gantt-chart" style="margin-bottom: 1mm;">
+                    <div class="gantt-row"><div class="task-lbl" style="font-size:5.2pt;">t3(p=5)</div><div class="gantt-track"><div class="box box-t3" style="left:calc(100%*5/14); width:calc(100%*1/14); font-size:4.4pt;">CPU</div><div class="box" style="left:calc(100%*6/14); width:calc(100%*5/14); background:#fee2e2; color:#991b1b; border:0.5px dashed #dc2626; font-size:4.4pt; font-weight:bold;">⛔ Bloq PMC</div><div class="box box-t3" style="left:calc(100%*11/14); width:calc(100%*2/14); font-size:4.4pt; font-weight:bold;">PMC [11-13]</div></div></div>
+                    <div class="gantt-row"><div class="task-lbl" style="font-size:5.2pt;">t2(p=3)</div><div class="gantt-track"><div class="box box-t2" style="left:calc(100%*3/14); width:calc(100%*2/14); font-size:4.4pt;">CPU [3-5]</div><div class="box box-wait" style="left:calc(100%*5/14); width:calc(100%*1/14); font-size:4.4pt;">P</div><div class="box box-t2" style="left:calc(100%*6/14); width:calc(100%*4/14); font-size:4.5pt; font-weight:bold; background:#fbbf24;">⚡ INVERSÃO [6-10] (FIM)</div></div></div>
+                    <div class="gantt-row"><div class="task-lbl" style="font-size:5.2pt;">t1(p=2)</div><div class="gantt-track"><div class="box box-t1" style="left:0; width:calc(100%*2/14); font-size:4.4pt;">CPU [0-2]</div><div class="box box-t1" style="left:calc(100%*2/14); width:calc(100%*1/14); background:#1d4ed8; font-size:4.4pt; font-weight:bold;">PMC</div><div class="box box-wait" style="left:calc(100%*3/14); width:calc(100%*7/14); font-size:4.4pt;">Preemptada (segura PMC)</div><div class="box box-t1" style="left:calc(100%*10/14); width:calc(100%*1/14); background:#1d4ed8; font-size:4.4pt; font-weight:bold;">PMC</div><div class="box box-wait" style="left:calc(100%*11/14); width:calc(100%*2/14); font-size:4.4pt;">P</div><div class="box box-t1" style="left:calc(100%*13/14); width:calc(100%*1/14); font-size:4.4pt;">FIM</div></div></div>
+                    <div class="gantt-axis" style="height:2.8mm;"><div class="axis-tick">0</div><div class="axis-tick">1</div><div class="axis-tick">2</div><div class="axis-tick">3</div><div class="axis-tick">4</div><div class="axis-tick">5</div><div class="axis-tick">6</div><div class="axis-tick">7</div><div class="axis-tick">8</div><div class="axis-tick">9</div><div class="axis-tick">10</div><div class="axis-tick">11</div><div class="axis-tick">12</div><div class="axis-tick">13</div><div class="axis-tick-end">14</div></div>
+                </div>
+
+                <!-- TABELA DE GABARITO DAS 7 PERGUNTAS -->
+                <table style="width: 100%; border-collapse: collapse; font-size: 5.2pt;">
+                    <tr style="background:#f1f5f9; font-weight:bold;">
+                        <td style="border:0.5px solid #cbd5e1; padding:0.4mm;">Campo da Questão na Prova</td>
+                        <td style="border:0.5px solid #cbd5e1; text-align:center; width:12mm;">Instante</td>
+                        <td style="border:0.5px solid #cbd5e1; padding:0.4mm;">Motivo / Dedução Direta</td>
+                    </tr>
+                    <tr><td style="border:0.5px solid #cbd5e1;">t1 solicita acesso exclusivo a PMC:</td><td style="border:0.5px solid #cbd5e1; text-align:center; font-weight:bold; background:#dcfce7;">2</td><td style="border:0.5px solid #cbd5e1;">Dado explícito no enunciado da questão.</td></tr>
+                    <tr><td style="border:0.5px solid #cbd5e1;">t1 recebe acesso exclusivo a PMC:</td><td style="border:0.5px solid #cbd5e1; text-align:center; font-weight:bold; background:#dcfce7;">2</td><td style="border:0.5px solid #cbd5e1;">PMC estava livre; ganha de imediato.</td></tr>
+                    <tr><td style="border:0.5px solid #cbd5e1;">t1 libera a PMC:</td><td style="border:0.5px solid #cbd5e1; text-align:center; font-weight:bold; background:#fee2e2;">11</td><td style="border:0.5px solid #cbd5e1;">Executa 1s em [2-3], é preemptada por t2, retoma em 10 e roda +1s em [10-11].</td></tr>
+                    <tr><td style="border:0.5px solid #cbd5e1;">t3 solicita acesso exclusivo a PMC:</td><td style="border:0.5px solid #cbd5e1; text-align:center; font-weight:bold; background:#dcfce7;">6</td><td style="border:0.5px solid #cbd5e1;">Inicia em t=5; solicita 1 unidade após o início (5 + 1 = 6).</td></tr>
+                    <tr><td style="border:0.5px solid #cbd5e1;">t3 recebe acesso exclusivo a PMC:</td><td style="border:0.5px solid #cbd5e1; text-align:center; font-weight:bold; background:#fee2e2;">11</td><td style="border:0.5px solid #cbd5e1;">Fica bloqueada de 6 a 11; acorda no momento que t1 libera em 11.</td></tr>
+                    <tr><td style="border:0.5px solid #cbd5e1;">t3 libera a PMC:</td><td style="border:0.5px solid #cbd5e1; text-align:center; font-weight:bold; background:#fee2e2;">13</td><td style="border:0.5px solid #cbd5e1;">Roda sua seção crítica de 2 unidades inteiramente em [11-13] (11 + 2 = 13).</td></tr>
+                    <tr><td style="border:0.5px solid #cbd5e1;">t2 termina sua execução:</td><td style="border:0.5px solid #cbd5e1; text-align:center; font-weight:bold; background:#fef3c7;">10</td><td style="border:0.5px solid #cbd5e1;">Roda 2s em [3-5], retoma em 6 (inversão enquanto t3 bloqueia) e conclui em 10.</td></tr>
+                </table>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 </body>
