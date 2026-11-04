@@ -1,61 +1,13 @@
-# Sistemas Inteligentes (ICSI30) — BSI-EC — 2026/2
+# Sistemas Inteligentes: entregas
 
-Hub de organização pessoal da disciplina. Prof. Gustavo A. Giménez-Lugo (DAINF/UTFPR).
+## Entrega 2: sinais vitais
 
-## Dados
+- [Artigo pronto em PDF](tarefas/tarefa-02-entrega/artigo.pdf)
+- [Notebook executado](tarefas/tarefa-02-entrega/Tarefa_2.ipynb)
+- [Dados e resultados](tarefas/tarefa-02-entrega/dados)
 
-| Item | Valor |
-|---|---|
-| Código | ICSI30 |
-| Carga horária | 45h (AT 2 + AP 1 por semana) — 51 aulas síncronas + 3 CCH |
-| Encontros | Quartas-feiras, 3 aulas, 19/08/2026 a 16/12/2026 |
-| Avaliação | Nota, frequência E, presencial, semestral |
-| Moodle | https://moodle.utfpr.edu.br/course/view.php?id=33522 — código de acesso `149` |
-| Livro básico | RUSSELL & NORVIG, *Inteligência Artificial* — **exemplar em mãos: 4ª edição, físico**. Toda a numeração de capítulos neste repo usa a 4ª ed. |
+O notebook contém todo o código. Para ler, abra o arquivo no GitHub. Para executar, use **Code → Download ZIP**, extraia os arquivos e abra o notebook no Jupyter, mantendo a pasta `dados` ao lado dele. Execute as células em ordem.
 
-## As 5 coisas que definem esta disciplina
+Dependências da Tarefa 2: Python, NumPy e Matplotlib. A execução conferida usou Python 3.11.9, NumPy 2.4.4 e Matplotlib 3.10.9. O notebook já inclui as saídas para permitir a leitura sem executar.
 
-1. **Flipped-classroom de verdade.** O encontro é debate, não exposição. Chegar sem ter lido o
-   capítulo significa não participar da aula — não é "acompanhar mais devagar".
-2. **Pré-requisito assumido: PAA.** Complexidade, corretude, invariantes, grafos e análise
-   assintótica são base, não conteúdo. Ver o auto-teste em `rotina-semanal.md`.
-3. **Modelagem e análise sobre implementação própria.** Não é disciplina de framework. O código
-   existe para gerar os dados que sustentam a discussão do *porquê*.
-4. **6h/semana de dedicação mínima**, fora dos encontros. Está escrito no plano de ensino.
-5. **LLM como autor = nota zero.** Uso instrumental exige documentação explícita. Leia
-   `politica-uso-llm.md` **antes** de escrever qualquer entrega.
-
-## Arquivos
-
-| Arquivo | Para quê |
-|---|---|
-| `cronograma.md` | Semana a semana: data, conteúdo, leitura prévia, entrega |
-| `avaliacoes.md` | Onde estão os 10 pontos e quando cada um vence |
-| `rotina-semanal.md` | Como distribuir as 6h + auto-teste de pré-requisitos |
-| `politica-uso-llm.md` | Regra de autoria e template de declaração de uso |
-| `encontros/encontro-01.md` | Plano de leitura até 19/08 + perguntas para o debate |
-| `encontros/_template.md` | Modelo para preparar cada encontro |
-| `implementacoes/README.md` | Plano do código próprio (busca, local/AG, ML) |
-| `tarefas/tarefa-01-busca.md` | Enunciado da Tarefa 1, checklist de nota zero, calendário e estratégia |
-| `abordagem-do-professor.md` | Perfil acadêmico do professor e o que ele espera nas entregas |
-| `tarefas/bibliografia-tsp.md` | Referências verificadas para o artigo da Tarefa 1 |
-| `materiais/professor/README.md` | Resumo da tese dele (2004), trajetória de publicações e ganchos para TCC |
-| `materiais/README.md` | Catálogo do acervo: documentos oficiais e material por bloco |
-| `materiais/01-agentes-e-ambientes/README.md` | Catálogo comentado do material do encontro 1, slide a slide |
-| `conceitos/busca-local-e-heuristicas.md` | Têmpera, feixe, admissibilidade × consistência — com exercícios de papel |
-| `ferramentas/traducao-de-artigos.md` | Pipeline testado para traduzir os PDFs EN→PT preservando layout |
-| `ferramentas/prolog.md` | Instalar o SWI-Prolog para o bloco 3 |
-
-## Pendências imediatas
-
-- [x] Moodle sincronizado — **blocos 2, 3, 4 e 5 catalogados** em `materiais/`
-- [x] Enunciado da **Tarefa 1** lido — registrado em `tarefas/tarefa-01-busca.md`
-- [x] Definir a **dupla** — feito; disponibilidade limitada, ver estratégia em `tarefas/tarefa-01-busca.md`
-- [ ] Entrar/criar o grupo de estudantes da disciplina (sem professores)
-- [ ] **Terminar Cap. 2 e fazer o Cap. 3** até 25/08 (aula 2 é dia 26/08 — busca informada e A\*)
-- [ ] **Cap. 4 §4.1** (têmpera simulada e algoritmos evolutivos) até 30/08 — a Tarefa 1 depende dele
-- [ ] Cap. 1 parado: ler sem caderno numa noite tranquila; rende no ensaio sobre Turing em novembro
-- [ ] **Tarefa 1 em andamento** — TSP com Têmpera Simulada e AG, entrega 16/09 14h00; andamento
-      cobrado em aula em 02/09
-- [ ] Baixar o **modelo SBC** de artigo (submissão abre 25/08)
-- [ ] Manter o **log de horas** e o **log de uso de LLM** desde já — ambos são exigidos na entrega
+O artigo é o documento de entrega no Moodle. Os dados de sinais vitais foram fornecidos para o exercício e não representam validação clínica.
